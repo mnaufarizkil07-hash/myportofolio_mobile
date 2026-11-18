@@ -4,23 +4,24 @@ import 'package:flutter/material.dart';
 class ItemHomepage {
   final String name;
   final IconData icon;
+  final Color color;
 
-  ItemHomepage(this.name, this.icon);
+  const ItemHomepage(this.name, this.icon, this.color);
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key});
+  const MyHomePage({super.key});
 
   // Data diri mahasiswa (disesuaikan menjadi identitas pemilik portofolio)
   final String npm = "2506623490";
   final String nama = "M. Naufal Rizki";
   final String pbpClass = "PBP B";
 
-  // Daftar tombol aksi
-  final List<ItemHomepage> items = [
-    ItemHomepage("Lihat Proyek", Icons.folder),
-    ItemHomepage("Tambah Proyek", Icons.add_circle),
-    ItemHomepage("Logout", Icons.logout),
+  // Daftar tombol aksi dengan ikon dan warna yang berbeda serta kontras
+  final List<ItemHomepage> items = const [
+    ItemHomepage("Lihat Proyek", Icons.folder, Colors.blue),
+    ItemHomepage("Tambah Proyek", Icons.add_circle, Colors.green),
+    ItemHomepage("Logout", Icons.logout, Colors.red),
   ];
 
   @override
@@ -51,7 +52,7 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16.0),
-            
+
             // Pesan sambutan dan deretan tombol aksi
             Center(
               child: Column(
@@ -110,7 +111,7 @@ class InfoCard extends StatelessWidget {
             const SizedBox(height: 8.0),
             Text(
               content,
-              textAlign: TextAlign.center, // Agar nama tidak terpotong
+              textAlign: TextAlign.center, // Agar teks tidak terpotong
             ),
           ],
         ),
@@ -127,9 +128,10 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Theme.of(context).colorScheme.secondary,
+      color: item.color,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
+        borderRadius: BorderRadius.circular(12),
         onTap: () {
           // Menampilkan pesan pop-up (SnackBar) di bawah layar
           ScaffoldMessenger.of(context)
