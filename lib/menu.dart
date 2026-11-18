@@ -11,10 +11,10 @@ class ItemHomepage {
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  // Data diri kamu (disesuaikan dari "Burhan" menjadi datamu)
+  // Data diri mahasiswa (disesuaikan menjadi identitas pemilik portofolio)
   final String npm = "2506623490";
   final String nama = "M. Naufal Rizki";
-  final String program = "Sistem Informasi";
+  final String pbpClass = "PBP B";
 
   // Daftar tombol aksi
   final List<ItemHomepage> items = [
@@ -41,13 +41,13 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Deretan kartu informasi profil
+            // Deretan kartu informasi profil: NPM, Name, Class
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 InfoCard(title: 'NPM', content: npm),
                 InfoCard(title: 'Name', content: nama),
-                InfoCard(title: 'Program', content: program),
+                InfoCard(title: 'Class', content: pbpClass),
               ],
             ),
             const SizedBox(height: 16.0),
