@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myportofolio_mobile/screens/project_form.dart';
+import 'package:myportofolio_mobile/screens/experience_form.dart';
 
 // Model untuk merepresentasikan atribut tombol menu aksi
 class ItemHomepage {
@@ -38,6 +39,13 @@ class ItemCard extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const ProjectFormPage(),
+              ),
+            );
+          } else if (item.name == "Tambah Pengalaman") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ExperienceFormPage(),
               ),
             );
           }

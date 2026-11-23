@@ -15,6 +15,7 @@ void main() {
     // Verify that the action buttons are displayed.
     expect(find.text('Lihat Proyek'), findsOneWidget);
     expect(find.text('Tambah Proyek'), findsOneWidget);
+    expect(find.text('Tambah Pengalaman'), findsOneWidget);
     expect(find.text('Logout'), findsOneWidget);
   });
 }
