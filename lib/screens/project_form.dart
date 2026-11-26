@@ -53,9 +53,9 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
 
     try {
       final created = await context.read<ApiClient>().createProject(
-            newProject,
-            token: token,
-          );
+        newProject,
+        token: token,
+      );
       if (!mounted) return;
       await showDialog<void>(
         context: context,
@@ -112,9 +112,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
-        ..showSnackBar(
-          SnackBar(content: Text('Terjadi kesalahan: $e')),
-        );
+        ..showSnackBar(SnackBar(content: Text('Terjadi kesalahan: $e')));
     } finally {
       if (mounted) {
         setState(() {
@@ -128,9 +126,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text('Add Project Form'),
-        ),
+        title: const Center(child: Text('Add Project Form')),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),

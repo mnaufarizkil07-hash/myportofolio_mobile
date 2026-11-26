@@ -75,9 +75,7 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                 physics: const AlwaysScrollableScrollPhysics(),
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.7,
-                  child: const Center(
-                    child: Text('No projects found.'),
-                  ),
+                  child: const Center(child: Text('No projects found.')),
                 ),
               ),
             );
@@ -91,7 +89,10 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
               itemBuilder: (context, index) {
                 final project = projects[index];
                 return Card(
-                  margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 6,
+                    horizontal: 4,
+                  ),
                   child: ListTile(
                     title: Text(
                       project.title,

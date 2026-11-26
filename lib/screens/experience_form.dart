@@ -53,11 +53,7 @@ class _ExperienceFormPageState extends State<ExperienceFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Add Experience Form',
-          ),
-        ),
+        title: const Center(child: Text('Add Experience Form')),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),
@@ -98,7 +94,8 @@ class _ExperienceFormPageState extends State<ExperienceFormPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   decoration: InputDecoration(
-                    hintText: "Contoh: PT Teknologi Indonesia / BEM Fasilkom UI",
+                    hintText:
+                        "Contoh: PT Teknologi Indonesia / BEM Fasilkom UI",
                     labelText: "Nama Perusahaan / Organisasi",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
@@ -129,10 +126,12 @@ class _ExperienceFormPageState extends State<ExperienceFormPage> {
                     ),
                   ),
                   initialValue: _experienceType,
-                  items: _experienceTypes.map((type) => DropdownMenuItem(
-                    value: type,
-                    child: Text(type),
-                  )).toList(),
+                  items: _experienceTypes
+                      .map(
+                        (type) =>
+                            DropdownMenuItem(value: type, child: Text(type)),
+                      )
+                      .toList(),
                   onChanged: (String? newValue) {
                     setState(() {
                       _experienceType = newValue!;
@@ -171,7 +170,8 @@ class _ExperienceFormPageState extends State<ExperienceFormPage> {
                 child: TextFormField(
                   maxLines: 4,
                   decoration: InputDecoration(
-                    hintText: "Jelaskan tanggung jawab, proyek, atau pencapaian Anda",
+                    hintText:
+                        "Jelaskan tanggung jawab, proyek, atau pencapaian Anda",
                     labelText: "Deskripsi Pengalaman",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
@@ -206,7 +206,9 @@ class _ExperienceFormPageState extends State<ExperienceFormPage> {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              title: const Text('Pengalaman berhasil ditambahkan!'),
+                              title: const Text(
+                                'Pengalaman berhasil ditambahkan!',
+                              ),
                               content: SingleChildScrollView(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -32,16 +32,16 @@ class _LoginScreenState extends State<LoginScreen> {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           SnackBar(
-            content: Text('Login gagal (${e.statusCode}). Periksa kredensial Anda.'),
+            content: Text(
+              'Login gagal (${e.statusCode}). Periksa kredensial Anda.',
+            ),
           ),
         );
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
-        ..showSnackBar(
-          SnackBar(content: Text('Terjadi kesalahan: $e')),
-        );
+        ..showSnackBar(SnackBar(content: Text('Terjadi kesalahan: $e')));
     } finally {
       if (mounted) {
         setState(() {
